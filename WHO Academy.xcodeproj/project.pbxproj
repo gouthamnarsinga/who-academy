@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		991EEC462BB1C5DF00AEA6F9 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991EEC452BB1C5DF00AEA6F9 /* Color+Extension.swift */; };
+		991EEC482BB1C5FD00AEA6F9 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991EEC472BB1C5FD00AEA6F9 /* Team.swift */; };
 		9920636A2BB18AD2002760B0 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992063692BB18AD2002760B0 /* TeamDetailView.swift */; };
 		9920636B2BB18AD2002760B0 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992063692BB18AD2002760B0 /* TeamDetailView.swift */; };
 		9920636C2BB18AD2002760B0 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992063692BB18AD2002760B0 /* TeamDetailView.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		991EEC452BB1C5DF00AEA6F9 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		991EEC472BB1C5FD00AEA6F9 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		992063692BB18AD2002760B0 /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
 		99B680082BB14F2600BFAE63 /* WHO Academy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WHO Academy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B6800B2BB14F2600BFAE63 /* WHO_AcademyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHO_AcademyApp.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				99B6803B2BB1665C00BFAE63 /* TeamsView.swift */,
 				99B6803F2BB1671100BFAE63 /* TeamsRow.swift */,
 				992063692BB18AD2002760B0 /* TeamDetailView.swift */,
+				991EEC452BB1C5DF00AEA6F9 /* Color+Extension.swift */,
+				991EEC472BB1C5FD00AEA6F9 /* Team.swift */,
 			);
 			path = "WHO Academy";
 			sourceTree = "<group>";
@@ -280,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991EEC482BB1C5FD00AEA6F9 /* Team.swift in Sources */,
 				99B680382BB1568800BFAE63 /* TopicRow.swift in Sources */,
 				99B680362BB1561500BFAE63 /* Topics.swift in Sources */,
 				99B6800E2BB14F2600BFAE63 /* ContentView.swift in Sources */,
@@ -287,6 +294,7 @@
 				99B6803C2BB1665C00BFAE63 /* TeamsView.swift in Sources */,
 				99B6800C2BB14F2600BFAE63 /* WHO_AcademyApp.swift in Sources */,
 				9920636A2BB18AD2002760B0 /* TeamDetailView.swift in Sources */,
+				991EEC462BB1C5DF00AEA6F9 /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

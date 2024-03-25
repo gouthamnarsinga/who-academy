@@ -6,39 +6,58 @@
 //
 
 import SwiftUI
+import Combine
 
 struct TeamsView: View {
     let topic: Topic
-    let teams = [Team(id: 0, title: "Team A", iconColor: .purple, memberCount: 12),
-                 Team(id: 1, title: "Team B", iconColor: .green, memberCount: 20),
-                 Team(id: 2, title: "Team C", iconColor: .yellow, memberCount: 42),
-                 Team(id: 3, title: "Team D", iconColor: .cyan, memberCount: 12),
-                 Team(id: 4, title: "Team E", iconColor: .green, memberCount: 20),
-                 Team(id: 5, title: "Team F", iconColor: .yellow, memberCount: 42),
-                 Team(id: 6, title: "Team G", iconColor: .cyan, memberCount: 12)
-                 
-    ]
+    @State private var intValue:Int = 0
+    
     var body: some View {
-        NavigationView{
-            List {
-                ForEach(0..<topic.count, id: \.self) { index in
-                    ZStack(alignment: .leading) {
-                        NavigationLink(
-                            destination: TeamDetailView(topic: topic, team: teams[index])) {
-                                EmptyView()
-                            }
-                            .opacity(0)
-                        
-                        TeamsRow(team: teams[index], topic: topic)
+        Group {
+            NavigationView{
+                List {
+                    ForEach(generateStructArray(count: topic.count), id: \.id) { team in
+                        ZStack(alignment: .leading) {
+                            NavigationLink(
+                                destination: TeamDetailView(topic: topic, team: team)) {
+                                    EmptyView()
+                                }
+                                .opacity(0)
+                            
+                            TeamsRow(team: team, topic: topic)
+                        }
                     }
+                    .listRowSeparator(.hidden)
                 }
-                .listRowSeparator(.hidden)
+                .navigationTitle("Teams")
+                .navigationBarTitleDisplayMode(.inline)
+                .padding(.top, -30)
+                .listStyle(.grouped)
+                
             }
-            .navigationTitle("Teams")
-            .navigationBarTitleDisplayMode(.inline)
-            .padding(.top, -30)
-            .listStyle(.grouped)
         }
+    }
+    
+    func generateStructArray(count: Int) -> [Team] {
+            var array: [Team] = []
+            
+            for i in 0...count-1 {
+                let randomNumber = Int.random(in: 1...100)
+                let color = Color.random()
+                let team = Team(id: i, title: "Team \(convertToAlphabets("\(i)"))", iconColor: color, memberCount: randomNumber)
+                array.append(team)
+            }
+            return array
+        }
+    func convertToAlphabets(_ input: String) -> String {
+        let numbersToAlphabets: [Character: String] = [
+            "0": "A", "1": "B", "2": "C",
+            "3": "D", "4": "E", "5": "F",
+            "6": "G", "7": "H", "8": "I",
+            "9": "J"
+        ]
+
+        return input.map { numbersToAlphabets[$0] ?? String($0) }.joined()
     }
 }
 
